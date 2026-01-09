@@ -1,0 +1,211 @@
+CIMMYT IRRIGATION BEST PRACTICES - SUSTAINABLE FARMING
+
+Source: International Maize and Wheat Improvement Center
+
+========================
+PRINCIPLES OF EFFICIENT IRRIGATION
+========================
+
+Water Use Efficiency (WUE):
+- Maximize crop yield per unit of water used
+- Target: > 1.0 kg grain per m³ water for cereals
+- Conservation agriculture increases WUE by 20-40%
+
+Four Pillars of Efficient Irrigation:
+1. Right Amount
+2. Right Time
+3. Right Method
+4. Right Quality
+
+========================
+MAIZE IRRIGATION - CIMMYT RECOMMENDATIONS
+========================
+
+Maize Water Productivity:
+
+Crop Water Requirement by Stage:
+- Vegetative (V6-V12): 50-70 liters/hectare/day
+- Reproductive (VT-R1): 80-100 liters/hectare/day  
+- Grain Filling (R2-R6): 70-90 liters/hectare/day
+
+Critical Period for Maize:
+- 2 weeks before to 2 weeks after flowering
+- Silk emergence to early grain fill
+- Water stress during this period can reduce yield by 50%
+
+Deficit Irrigation Strategy:
+- Apply 80% of full requirement during vegetative
+- Apply 100% during flowering and grain fill
+- Can save 15-20% total water with minimal yield loss
+
+========================
+WHEAT IRRIGATION - PRECISION APPROACH
+========================
+
+High-Efficiency Wheat Production:
+
+Optimal Irrigation Schedule:
+1. Crown Root Initiation (CRI) - 20 DAS
+   - 35-45 liters/hectare/day
+   - Ensures strong root system
+
+2. Maximum Tillering - 40-45 DAS  
+   - 50-65 liters/hectare/day
+   - Determines productive tillers
+
+3. Jointing - 60-65 DAS
+   - 60-70 liters/hectare/day
+   - Spike formation stage
+
+4. Flowering - 75-80 DAS
+   - 75-85 liters/hectare/day
+   - Most critical stage
+
+5. Milk Stage - 95-100 DAS
+   - 65-75 liters/hectare/day
+   - Grain filling
+
+CIMMYT Water Saving Tip:
+- Omit irrigation at tillering if soil moisture > 60%
+- Save one irrigation per season without yield penalty
+
+========================
+RICE - WATER SAVING TECHNOLOGIES
+========================
+
+Alternate Wetting and Drying (AWD):
+
+Protocol:
+- Maintain 5cm water until 7-10 days after transplanting
+- Allow water to drop to 15cm below surface
+- Re-irrigate when field cracks appear
+- Repeat cycle throughout season
+
+Benefits:
+- Water savings: 15-30%
+- Methane emission reduction: 30-70%  
+- Root growth improvement
+- Yield maintained or increased 5-10%
+
+Safe AWD: Never let water drop below 15cm in:
+- Flowering stage (critical!)
+- First 2-3 weeks after transplanting
+
+Direct Seeded Rice (DSR):
+- No standing water required initially
+- Water requirement: 60-80 liters/hectare/day (30% less than transplanted)
+- Requires good weed management
+
+========================
+CLIMATE-SMART IRRIGATION
+========================
+
+Adjustments for Climate Conditions:
+
+Hot and Dry (>35°C, RH<40%):
+- Increase irrigation by 20%
+- Irrigate early morning or evening
+- Consider light, frequent irrigations
+
+Cool and Humid (<25°C, RH>70%):
+- Reduce irrigation by 15%
+- Risk of fungal diseases if over-watered
+
+Windy Conditions:
+- Wind speed > 15 km/h increases evaporation
+- Add 10-15% extra water on windy days
+
+========================
+IRRIGATION METHODS COMPARISON
+========================
+
+Flood/Basin Irrigation:
+- Water efficiency: 35-50%
+- Suitable for rice, wheat
+- High water loss through deep percolation
+
+Furrow Irrigation:
+- Water efficiency: 50-65%
+- Good for maize, wheat
+- Moderate water use
+
+Sprinkler Irrigation:
+- Water efficiency: 65-80%
+- All crops, especially wheat and maize
+- Better distribution, less labor
+
+Drip Irrigation:
+- Water efficiency: 80-95%
+- Best for high-value crops
+- Highest initial cost, lowest water use
+
+========================
+RAINFALL INTEGRATION
+========================
+
+Making Most of Rainfall:
+
+Light Rain (2-5mm):
+- Continue planned irrigation
+- Minimal soil moisture addition
+
+Moderate Rain (5-15mm):
+- Delay irrigation by 1-2 days
+- Monitor soil moisture
+- Reduce next irrigation by 50%
+
+Heavy Rain (>15mm):
+- Skip next scheduled irrigation
+- Ensure good drainage
+- Resume when soil moisture depletes to threshold
+
+========================
+SOIL MOISTURE DECISION RULES
+========================
+
+When to Irrigate (Soil Moisture %):
+
+Rice:
+- Early stage: Irrigate if below 70%
+- Vegetative: Irrigate if below 75%
+- Flowering: Irrigate if below 80%
+
+Wheat:
+- Early stage: Irrigate if below 50%
+- Vegetative: Irrigate if below 55%
+- Flowering: Irrigate if below 60%
+
+Maize:
+- Early stage: Irrigate if below 55%
+- Vegetative: Irrigate if below 60%
+- Flowering: Irrigate if below 65%
+
+Safety Rule: Never exceed 150 liters/hectare/day single application
+
+================================================================================
+SUSTAINABLE IRRIGATION PRINCIPLES
+================================================================================
+
+1. Minimize Water Waste
+   - Fix leaks immediately
+   - Use efficient application methods
+   - Avoid over-irrigation
+
+2. Maintain Soil Health
+   - Prevent waterlogging  
+   - Maintain organic matter
+   - Use crop rotation
+
+3. Monitor and Adapt
+   - Use soil moisture sensors when possible
+   - Keep irrigation records
+   - Adjust based on crop response
+
+4. Conserve for Future
+   - Rainwater harvesting
+   - Groundwater recharge
+   - Community water management
+
+================================================================================
+DISCLAIMER: Farming is context-specific. These are evidence-based guidelines but should be adapted to local conditions, farmer experience, and available resources.
+================================================================================

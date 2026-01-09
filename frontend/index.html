@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Irrigation Scheduler</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&family=Inter:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; connect-src 'self' http://127.0.0.1:8000;">
+    <meta name="description"
+        content="Agentic AI Smart Irrigation Scheduler and Water Saver. Save water with precision agriculture.">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="app-header">
+        <div class="header-content">
+            <div class="brand">
+                <h1 data-translate="title">𝚂𝚖𝚊𝚛𝚝𝙵𝚕𝚘𝚠</h1>
+                <p data-translate="subtitle">Smart Water Management System</p>
+            </div>
+            <div class="header-actions">
+                <div class="dashboard-guide-container">
+                    <button class="dashboard-guide-btn" id="dashboard-guide-btn">
+                        <span class="btn-icon">▶</span>
+                        <span class="btn-text">How to Use Dashboard</span>
+                    </button>
+                    <div class="guide-helper-text">Watch a quick video explaining all dashboard features.</div>
+                </div>
+                <label for="language-select" class="language-label">🌐</label>
+                <select id="language-select" class="language-select">
+                    <option value="ta">தமிழ் (Tamil)</option>
+                    <option value="en">English</option>
+                    <option value="hi">हिंदी (Hindi)</option>
+                    <option value="es">Español (Spanish)</option>
+                </select>
+                <div class="avatar-dropdown">
+                    <button class="avatar-btn" id="avatar-btn">
+                        <span class="avatar-circle" id="user-avatar">U</span>
+                    </button>
+                    <div class="avatar-dropdown-content" id="avatar-dropdown">
+                        <div class="avatar-profile-info">
+                            <div class="avatar-user-name" id="avatar-user-name">User</div>
+                            <div class="avatar-user-email" id="avatar-user-email">Not logged in</div>
+                        </div>
+                        <div class="avatar-profile-actions">
+                            <button class="avatar-logout-btn" id="avatar-logout-btn">Logout</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Rain Alert Banner -->
+    <div id="rain-alert-banner" class="rain-alert-banner" style="display: none;">
+        <div class="rain-alert-content">
+            <span class="rain-alert-icon">🌧️</span>
+            <div class="rain-alert-text">
+                <strong data-translate="rainAlert">Rain Alert</strong>
+                <span id="rain-alert-message"></span>
+            </div>
+            <button class="rain-alert-close" onclick="document.getElementById('rain-alert-banner').style.display='none'">×</button>
+        </div>
+    </div>
+
+    <!-- Agriculture News Slideshow -->
+    
+
+    <!-- Main Dashboard -->
+    <main class="dashboard">
+        <!-- Input Section -->
+        <section class="input-section">
+            <div class="card field-settings-card">
+                <div class="card-header">
+                    <span class="card-icon">🌾</span>
+                    <h2>Field Settings</h2>
+                </div>
+                
+                <div class="input-grid">
+                    <div class="crop-row">
+                        <div class="input-group">
+                            <label for="crop_type" data-translate="cropType">
+                                <span class="input-icon">🌱</span>
+                                Crop Type
+                            </label>
+                            <select id="crop_type" class="form-input">
+                                <option value="" data-translate="selectCrop">Select crop</option>
+                                <option value="rice" data-translate="rice">Rice</option>
+                                <option value="wheat" data-translate="wheat">Wheat</option>
+                                <option value="maize" data-translate="maize">Maize</option>
+                            </select>
+                        </div>
+
+                        <div class="input-group" id="crop_variety_group" style="display: none;">
+                            <label for="crop_variety" data-translate="cropVariety">
+                                <span class="input-icon">🌾</span>
+                                Crop Variety
+                            </label>
+                            <select id="crop_variety" class="form-input" disabled>
+                                <option value="" data-translate="selectVariety">Select variety</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="crop_stage" data-translate="cropStage">
+                            <span class="input-icon">🌿</span>
+                            Crop Stage
+                        </label>
+                        <select id="crop_stage" class="form-input">
+                            <option value="early" data-translate="early">Early Stage</option>
+                            <option value="vegetative" data-translate="vegetative">Vegetative Growth</option>
+                            <option value="flowering" data-translate="flowering">Flowering</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="field_size" data-translate="fieldSize">
+                            <span class="input-icon">📏</span>
+                            Field Size (Hectares)
+                        </label>
+                        <input type="number" id="field_size" class="form-input" value="1.0" step="0.1" min="0.1">
+                    </div>
+
+                    <!-- <div class="input-group">
+                        <label for="rain_mm" data-translate="predictedRainfall">
+                            <span class="input-icon">🌧️</span>
+                            Predicted Rainfall (mm)
+                        </label>
+                        <input type="number" id="rain_mm" class="form-input" value="0" step="0.1" min="0">
+                    </div> -->
+                </div>
+
+                <button id="plan-btn" class="primary-btn">
+                    <span class="btn-icon">🚀</span>
+                    <span data-translate="generatePlan">Generate Irrigation Plan</span>
+                </button>
+
+                <!-- Loading State -->
+                <div id="loading" class="loading-state" style="display: none;">
+                    <div class="spinner"></div>
+                    <p>AI is analyzing your field conditions...</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Results Section -->
+        <section class="results-section">
+            <!-- Decision Card -->
+            <div id="result-card" class="card decision-card" style="display: none;">
+                <div class="card-header">
+                    <span class="card-icon">💧</span>
+                    <h2>Irrigation Decision</h2>
+                </div>
+                
+                <div class="decision-content">
+                    <div id="decision-badge" class="decision-badge">Irrigate</div>
+                    <div class="water-amount">
+                        <span id="water-amount" class="amount-value">0</span>
+                        <span class="amount-unit">Liters</span>
+                    </div>
+                    <div class="water-details">
+                        <span id="water-per-ha" class="detail-value">0</span> L/Ha for 
+                        <span id="display-crop" class="crop-name">Rice</span>
+                    </div>
+                    <div class="rainfall-info">
+                        <span class="rainfall-label">Predicted Rainfall:</span>
+                        <span id="rainfall-value" class="rainfall-value">--</span>
+                        <span class="rainfall-unit">mm</span>
+                        <span class="rainfall-source">(System Estimated)</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Confidence Card -->
+            <div id="confidence-card" class="card confidence-card" style="display: none;">
+                <div class="card-header">
+                    <span class="card-icon">📊</span>
+                    <h2>Confidence Level</h2>
+                </div>
+                
+                <div class="confidence-content">
+                    <div class="confidence-display">
+                        <span id="confidence-score" class="confidence-value">85%</span>
+                        <div class="confidence-bar">
+                            <div id="confidence-fill" class="confidence-fill"></div>
+                        </div>
+                    </div>
+                    <p class="confidence-description">How reliable is this recommendation</p>
+                </div>
+            </div>
+
+            <!-- Safety Warning Card -->
+            <div id="safety-warning-card" class="card safety-card" style="display: none;">
+                <div class="card-header">
+                    <span class="card-icon">⚠️</span>
+                    <h2>Expert Consultation Required</h2>
+                </div>
+                
+                <div class="safety-content">
+                    <p id="warning-message" class="warning-text">Extreme field conditions detected.</p>
+                    <p class="safety-advice">Please consult a local agricultural extension officer.</p>
+                </div>
+            </div>
+
+            <!-- Soil Moisture Card -->
+            <div id="soil-card" class="card info-card" style="display: none;">
+                <div class="card-header">
+                    <span class="card-icon">🌡️</span>
+                    <h2>Current Soil Moisture</h2>
+                </div>
+                
+                <div class="soil-content">
+                    <div class="soil-value">
+                        <span id="soil-moisture" class="moisture-value">0</span>
+                        <span class="moisture-unit">%</span>
+                    </div>
+                    <div class="data-source" id="data-source">Source: Rule-Based Calculation</div>
+                </div>
+            </div>
+
+            <!-- Sources Card -->
+            <div id="sources-card" class="card sources-card" style="display: none;">
+                <div class="card-header">
+                    <span class="card-icon">📚</span>
+                    <h2>Sources Consulted</h2>
+                </div>
+                
+                <div class="sources-content">
+                    <div id="sources-badges" class="sources-badges">
+                        <!-- Source badges will be injected here -->
+                    </div>
+                    <p class="sources-note">Recommendations are validated using public agricultural guidelines.</p>
+                </div>
+            </div>
+
+            <!-- Verification Card -->
+            <div id="verification-card" class="card verification-card" style="display: none;">
+                <div class="card-header">
+                    <span class="card-icon">✅</span>
+                    <h2>System Verification</h2>
+                </div>
+                
+                <div class="verification-content">
+                    <div id="verification-checklist" class="verification-checklist">
+                        <!-- Verification items will be injected here -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Weekly Schedule Section -->
+            <div class="card schedule-card">
+                <div class="card-header">
+                    <span class="card-icon">📅</span>
+                    <h2>7-Day Irrigation Schedule</h2>
+                    <button id="generate-week-btn" class="secondary-btn">
+                        <span class="btn-icon">🔄</span>
+                        Generate Week
+                    </button>
+                </div>
+                
+                <div id="weekly-schedule-container" class="schedule-content">
+                    <p class="placeholder-text">Click "Generate Week" to create a 7-day irrigation schedule</p>
+                </div>
+            </div>
+
+            <!-- Water Savings Card -->
+            <div class="card savings-card">
+                <div class="card-header">
+                    <span class="card-icon">💰</span>
+                    <h2>Water Savings Report</h2>
+                    <div class="export-buttons">
+                        <button id="export-report-json" class="export-btn" title="Export as JSON">📥 JSON</button>
+                        <button id="export-report-csv" class="export-btn" title="Export as CSV">📥 CSV</button>
+                    </div>
+                </div>
+                
+                <div class="savings-content">
+                    <div class="savings-grid">
+                        <div class="savings-item primary">
+                            <span id="water-saved" class="savings-value">--</span>
+                            <span class="savings-label">Total Water Saved (L)</span>
+                        </div>
+                        <div class="savings-item">
+                            <span id="ai-usage" class="savings-value">--</span>
+                            <span class="savings-label">Smart System Usage</span>
+                        </div>
+                        <div class="savings-item">
+                            <span id="fixed-usage" class="savings-value">--</span>
+                            <span class="savings-label">Traditional Schedule</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+        <div class="footer-content">
+            <p class="disclaimer">"This system is a decision-support tool and does not replace agricultural experts. No chemical or medical recommendations provided."</p>
+            <!-- <p class="multilingual-note">🌐 Multi-language support coming soon</p> -->
+        </div>
+    </footer>
+
+    <script src="translations.js"></script>
+    <script src="script.js"></script>
+    
+    <!-- AI Chatbot Assistant -->
+    <div id="chatbot-container" class="chatbot-container">
+        <!-- Help Popup Message -->
+        <div id="help-popup" class="help-popup">
+            <div class="help-text">
+                <span id="help-text">Need help with this page?</span>
+            </div>
+            <div class="help-arrow"></div>
+        </div>
+
+        <!-- Chat Icon -->
+        <div id="chatbot-icon" class="chatbot-icon">
+            <div class="chat-icon-inner">
+                <span class="chat-icon-text">🤖</span>
+                <div class="notification-dot"></div>
+            </div>
+        </div>
+
+        <!-- Chat Window -->
+        <div id="chatbot-window" class="chatbot-window">
+            <!-- Chat Header -->
+            <div class="chatbot-header">
+                <div class="chatbot-info">
+                    <div class="chatbot-avatar">🤖</div>
+                    <div class="chatbot-details">
+                        <h3>Dashboard Helper</h3>
+                        <span class="status-indicator online"></span>
+                        <span class="status-text">Online</span>
+                    </div>
+                </div>
+                <div class="chatbot-controls">
+                    <button id="language-toggle" class="language-toggle">
+                        🌐 <span id="current-lang">EN</span>
+                    </button>
+                    <button id="minimize-chat" class="minimize-btn">−</button>
+                    <button id="close-chat" class="close-btn">×</button>
+                </div>
+            </div>
+
+            <!-- Language Selector -->
+            <div id="language-selector" class="language-selector" style="display: none;">
+                <button data-lang="en" class="lang-option">English</button>
+                <button data-lang="ta" class="lang-option">தமிழ்</button>
+                <button data-lang="hi" class="lang-option">हिंदी</button>
+            </div>
+
+            <!-- Chat Messages -->
+            <div id="chat-messages" class="chat-messages">
+                <div class="welcome-message">
+                    <div class="bot-message">
+                        <div class="message-avatar">🤖</div>
+                        <div class="message-content">
+                            <p id="welcome-text">Hi 👋 I'm here to help you with this page. Ask me anything about the features you see here.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Actions -->
+                <div class="quick-actions">
+                    <button class="quick-action" data-action="what-is-this">What is this page?</button>
+                    <button class="quick-action" data-action="how-to-use">How to use this dashboard?</button>
+                    <button class="quick-action" data-action="features">What features are available?</button>
+                </div>
+            </div>
+
+            <!-- Chat Input -->
+            <div class="chat-input-container">
+                <input type="text" id="chat-input" placeholder="Ask about this page..." />
+                <button id="send-message" class="send-btn">
+                    <span>➤</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Avatar Dropdown Script -->
+    <script>
+        // Avatar dropdown functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const avatarBtn = document.getElementById('avatar-btn');
+            const avatarDropdown = document.getElementById('avatar-dropdown');
+            const avatarUserElement = document.getElementById('avatar-user-name');
+            const avatarEmailElement = document.getElementById('avatar-user-email');
+            const avatarCircle = document.getElementById('user-avatar');
+            
+            // Initialize user data immediately
+            updateAvatarProfile();
+            
+            if (avatarBtn && avatarDropdown) {
+                // Toggle avatar dropdown
+                avatarBtn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    avatarDropdown.classList.toggle('show');
+                });
+                
+                // Close avatar dropdown when clicking outside
+                document.addEventListener('click', function(e) {
+                    if (!avatarDropdown.contains(e.target) && e.target !== avatarBtn) {
+                        avatarDropdown.classList.remove('show');
+                    }
+                });
+            }
+        });
+        
+        function updateAvatarProfile() {
+            const currentUser = sessionStorage.getItem('currentUser');
+            const avatarUserElement = document.getElementById('avatar-user-name');
+            const avatarEmailElement = document.getElementById('avatar-user-email');
+            const avatarCircle = document.getElementById('user-avatar');
+            
+            if (currentUser) {
+                try {
+                    const userData = JSON.parse(currentUser);
+                    const userName = userData.name || 'User';
+                    const userEmail = userData.email || 'Not logged in';
+                    
+                    // Update avatar elements
+                    if (avatarUserElement) avatarUserElement.textContent = userName;
+                    if (avatarEmailElement) avatarEmailElement.textContent = userEmail;
+                    if (avatarCircle) {
+                        // Get first letter of user name
+                        const firstLetter = userName.charAt(0).toUpperCase();
+                        avatarCircle.textContent = firstLetter;
+                    }
+                } catch (error) {
+                    console.error('Error parsing user data:', error);
+                    if (avatarUserElement) avatarUserElement.textContent = 'Error';
+                    if (avatarEmailElement) avatarEmailElement.textContent = 'Error';
+                    if (avatarCircle) avatarCircle.textContent = 'E';
+                }
+            } else {
+                // Update avatar elements for logged out state
+                if (avatarUserElement) avatarUserElement.textContent = 'User';
+                if (avatarEmailElement) avatarEmailElement.textContent = 'Not logged in';
+                if (avatarCircle) avatarCircle.textContent = 'U';
+            }
+        }
+        
+        // Update profile when user logs in/out
+        window.addEventListener('storage', function(event) {
+            if (event.key === 'currentUser') {
+                updateAvatarProfile();
+            }
+        });
+        
+        // Logout functionality
+        const avatarLogoutBtn = document.getElementById('avatar-logout-btn');
+        
+        if (avatarLogoutBtn) {
+            avatarLogoutBtn.addEventListener('click', function() {
+                // Clear session storage
+                sessionStorage.removeItem('currentUser');
+                
+                // Update profile display
+                updateAvatarProfile();
+                
+                // Close dropdown
+                const avatarDropdown = document.getElementById('avatar-dropdown');
+                if (avatarDropdown) {
+                    avatarDropdown.classList.remove('show');
+                }
+                
+                // Redirect to login page after a short delay
+                setTimeout(() => {
+                    window.location.href = 'login.html';
+                }, 1000);
+            });
+        }
+    </script>
+    
+    <!-- Index Page Chatbot Script -->
+    <script src="index-chatbot.js"></script>
+</body>
+
+</html>

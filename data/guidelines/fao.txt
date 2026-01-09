@@ -1,0 +1,127 @@
+FAO IRRIGATION GUIDELINES - CROP WATER REQUIREMENTS
+
+Source: Food and Agriculture Organization of the United Nations
+
+========================
+RICE (Oryza sativa)
+========================
+
+General Water Requirements:
+- Rice is a water-intensive crop requiring consistent moisture
+- Flooded conditions during vegetative and flowering stages
+- Soil moisture should be maintained at 75-85% during critical stages
+
+Growth Stages:
+
+1. EARLY/ESTABLISHMENT (0-30 days)
+   - Water requirement: 70-90 liters/hectare/day
+   - Soil moisture threshold: 70%
+   - Keep fields flooded to 5-10cm depth
+   - Critical for seedling establishment
+
+2. VEGETATIVE GROWTH (30-70 days)
+   - Water requirement: 90-110 liters/hectare/day
+   - Soil moisture threshold: 75%
+   - Maintain continuous flooding
+   - Peak water demand period
+
+3. FLOWERING/REPRODUCTIVE (70-100 days)
+   - Water requirement: 110-130 liters/hectare/day
+   - Soil moisture threshold: 80%
+   - Most critical stage - DO NOT water stress
+   - Continuous standing water essential
+
+Rainfall Adjustments:
+- Rainfall > 10mm: Skip irrigation
+- Rainfall 5-10mm: Reduce irrigation by 50%
+- Rainfall < 5mm: Maintain normal schedule
+
+========================
+WHEAT (Triticum aestivum)
+========================
+
+General Water Requirements:
+- Moderate water requirements compared to rice
+- More tolerant to water stress
+- Critical periods: tillering, flowering, grain filling
+
+Growth Stages:
+
+1. EARLY/GERMINATION (0-25 days)
+   - Water requirement: 35-45 liters/hectare/day
+   - Soil moisture threshold: 50%
+   - Light irrigation for seed germination
+
+2. VEGETATIVE/TILLERING (25-60 days)
+   - Water requirement: 55-65 liters/hectare/day
+   - Soil moisture threshold: 55%
+   - Important for tiller development
+
+3. FLOWERING/GRAIN FILLING (60-100 days)
+   - Water requirement: 75-85 liters/hectare/day
+   - Soil moisture threshold: 60%
+   - Critical stage - affects yield directly
+
+Rainfall Adjustments:
+- Rainfall > 15mm: Skip irrigation
+- Rainfall 8-15mm: Reduce by 50%
+- Monitor soil moisture regularly
+
+========================
+MAIZE/CORN (Zea mays)
+========================
+
+General Water Requirements:
+- Sensitive to water stress during flowering
+- Can tolerate some drought in early stages
+- Deep rooting system
+
+Growth Stages:
+
+1. EARLY/SEEDLING (0-30 days)
+   - Water requirement: 45-55 liters/hectare/day
+   - Soil moisture threshold: 55%
+   - Ensure good germination and establishment
+
+2. VEGETATIVE GROWTH (30-60 days)
+   - Water requirement: 65-75 liters/hectare/day
+   - Soil moisture threshold: 60%
+   - Rapid growth period
+
+3. FLOWERING/GRAIN FILLING (60-95 days)
+   - Water requirement: 85-95 liters/hectare/day
+   - Soil moisture threshold: 65%
+   - CRITICAL - any stress severely affects yield
+   - Tasseling and silking are most sensitive
+
+Rainfall Adjustments:
+- Rainfall > 12mm: Skip irrigation
+- Rainfall 6-12mm: Reduce by 40%
+
+========================
+GENERAL GUIDELINES
+========================
+
+Soil Moisture Management:
+- Use tensiometers or moisture sensors
+- Irrigate when soil moisture drops below crop-specific threshold
+- Avoid over-irrigation - can lead to waterlogging and nutrient leaching
+
+Water Conservation:
+- Schedule irrigation during early morning or evening
+- Use drip or sprinkler systems when possible
+- Mulching can reduce water needs by 20-30%
+
+Climate Considerations:
+- Hot, dry weather increases water requirements by 15-20%
+- Cool, humid weather reduces by 10-15%
+- Wind increases evapotranspiration
+
+Safety Limits:
+- Maximum single application: 150 liters/hectare
+- Avoid irrigation if heavy rain (>20mm) expected within 24 hours
+
+================================================================================
+This document provides evidence-based guidelines for precision irrigation.
+Always consult local agricultural extension services for region-specific advice.
+================================================================================

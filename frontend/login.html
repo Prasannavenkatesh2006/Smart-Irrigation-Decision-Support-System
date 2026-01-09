@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Irrigation System - Login</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Google Sign-In script -->
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <meta name="google-signin-client_id" content="313492899208-050le5l9gs8etovou5a6e5amjlgi9a7s.apps.googleusercontent.com">
+    <meta name="description" content="Login to Smart Irrigation Scheduler">
+</head>
+
+<body>
+    <div class="login-container">
+        <div class="login-card">
+            <!-- AR Corner Elements -->
+            <div class="corner-bottom-left"></div>
+            <div class="corner-bottom-right"></div>
+
+            <!-- Logo and Title -->
+            <div class="login-header">
+                <div class="brand">
+                    <h1>𝚂𝚖𝚊𝚛𝚝𝙵𝚕𝚘𝚠</h1>
+                    <p>Smart Water Management System</p>
+                </div>
+            </div>
+
+            <!-- Login Form -->
+            <div id="login-form" class="auth-form">
+                <h2>Welcome Back</h2>
+                <p class="form-subtitle">Sign in to your account</p>
+                
+                <form id="signin-form">
+                    <div class="input-group">
+                        <label for="login-username">Username</label>
+                        <input type="text" id="login-username" name="username" required 
+                               placeholder="Enter your username" autocomplete="off">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="login-password">Password</label>
+                        <input type="password" id="login-password" name="password" required 
+                               placeholder="Enter your password" autocomplete="off">
+                        <button type="button" class="toggle-password" onclick="togglePassword('login-password')">
+                            <svg class="eye-icon" viewBox="0 0 24 24">
+                                <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
+                                <circle cx="12" cy="12" r="2.5"/>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <div class="form-options">
+                        <label class="checkbox-container">
+                            <input type="checkbox" id="remember-me">
+                            <span class="checkmark"></span>
+                            Remember me
+                        </label>
+                        <a href="#" class="forgot-password">Forgot password?</a>
+                    </div>
+
+                    <button type="submit" class="primary-btn full-width">
+                        <span>Sign In</span>
+                    </button>
+                </form>
+
+                <div class="divider">
+                    <span>OR</span>
+                </div>
+
+                <!-- Google Sign-In Button Container -->
+                <div id="google-signin-button"></div>
+
+                <p class="switch-form">
+                    Don't have an account? 
+                    <a href="#" onclick="switchToRegister()">Register</a>
+                </p>
+            </div>
+
+            <!-- Registration Form -->
+            <div id="register-form" class="auth-form" style="display: none;">
+                <h2>Create Account</h2>
+                <p class="form-subtitle">Join the smart irrigation community</p>
+                
+                <form id="signup-form">
+                    <div class="input-grid">
+                        <div class="input-group">
+                            <label for="register-username">Username</label>
+                            <input type="text" id="register-username" name="username" required 
+                                   placeholder="Choose a username" minlength="3" maxlength="20" autocomplete="off">
+                        </div>
+
+                        <div class="input-group">
+                            <label for="register-email">Email</label>
+                            <input type="email" id="register-email" name="email" required 
+                                   placeholder="your@email.com" autocomplete="off">
+                        </div>
+
+                        <div class="input-group">
+                            <label for="register-password">Password</label>
+                            <input type="password" id="register-password" name="password" required 
+                                   placeholder="Create a password" minlength="6" autocomplete="off">
+                            <button type="button" class="toggle-password" onclick="togglePassword('register-password')">
+                                <svg class="eye-icon" viewBox="0 0 24 24">
+                                    <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
+                                    <circle cx="12" cy="12" r="2.5"/>
+                                </svg>
+                            </button>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="register-confirm-password">Confirm Password</label>
+                            <input type="password" id="register-confirm-password" name="confirmPassword" required 
+                                   placeholder="Confirm your password" autocomplete="off">
+                            <button type="button" class="toggle-password" onclick="togglePassword('register-confirm-password')">
+                                <svg class="eye-icon" viewBox="0 0 24 24">
+                                    <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
+                                    <circle cx="12" cy="12" r="2.5"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="input-group full-width">
+                        <label class="checkbox-container">
+                            <input type="checkbox" id="agree-terms" required>
+                            <span class="checkmark"></span>
+                            I agree to the <a href="#" class="terms-link">Terms and Conditions</a>
+                        </label>
+                    </div>
+
+                    <button type="submit" class="primary-btn full-width">
+                        <span>Create Account</span>
+                    </button>
+                </form>
+
+                <div class="divider">
+                    <span>OR</span>
+                </div>
+
+                <!-- Google Sign-In Button Container -->
+                <div id="google-signin-button-register"></div>
+
+                <p class="switch-form">
+                    Already have an account? 
+                    <a href="#" onclick="switchToLogin()">Sign in</a>
+                </p>
+            </div>
+        </div>
+
+        <!-- Working Water Spraying System -->
+        <div class="water-spray-container">
+            <!-- Water drops falling from sprinklers -->
+            <div class="water-spray sprinkler-1"></div>
+            <div class="water-spray sprinkler-2"></div>
+            <div class="water-spray sprinkler-3"></div>
+            <div class="water-spray sprinkler-4"></div>
+            <div class="water-spray sprinkler-5"></div>
+            <div class="water-spray sprinkler-6"></div>
+            <div class="water-spray sprinkler-7"></div>
+            <div class="water-spray sprinkler-8"></div>
+            <div class="water-spray sprinkler-9"></div>
+            <div class="water-spray sprinkler-10"></div>
+            <div class="water-spray sprinkler-11"></div>
+            <div class="water-spray sprinkler-12"></div>
+            
+            <!-- Water streams -->
+            <div class="water-stream stream-1"></div>
+            <div class="water-stream stream-2"></div>
+            <div class="water-stream stream-3"></div>
+            <div class="water-stream stream-4"></div>
+            <div class="water-stream stream-5"></div>
+            <div class="water-stream stream-6"></div>
+        </div>
+    </div>
+
+    <!-- AI Chatbot Assistant -->
+    <div id="chatbot-container" class="chatbot-container">
+        <!-- Help Popup Message -->
+        <div id="help-popup" class="help-popup">
+            <div class="help-text">
+                <span class="help-en">HELP</span>
+                <span class="help-ta">உதவி</span>
+                <span class="help-hi">मदद</span>
+            </div>
+            <div class="help-arrow"></div>
+        </div>
+
+        <!-- Chat Icon -->
+        <div id="chatbot-icon" class="chatbot-icon">
+            <div class="chat-icon-inner">
+                <span class="chat-icon-text">🤖</span>
+                <div class="notification-dot"></div>
+            </div>
+        </div>
+
+        <!-- Chat Window -->
+        <div id="chatbot-window" class="chatbot-window">
+            <!-- Chat Header -->
+            <div class="chatbot-header">
+                <div class="chatbot-info">
+                    <div class="chatbot-avatar">🤖</div>
+                    <div class="chatbot-details">
+                        <h3>Registration Helper</h3>
+                        <span class="status-indicator online"></span>
+                        <span class="status-text">Online</span>
+                    </div>
+                </div>
+                <div class="chatbot-controls">
+                    <button id="language-toggle" class="language-toggle">
+                        🌐 <span id="current-lang">EN</span>
+                    </button>
+                    <button id="minimize-chat" class="minimize-btn">−</button>
+                    <button id="close-chat" class="close-btn">×</button>
+                </div>
+            </div>
+
+            <!-- Language Selector -->
+            <div id="language-selector" class="language-selector" style="display: none;">
+                <button data-lang="en" class="lang-option active">English</button>
+                <button data-lang="ta" class="lang-option">தமிழ்</button>
+                <button data-lang="hi" class="lang-option">हिंदी</button>
+            </div>
+
+            <!-- Chat Messages -->
+            <div id="chat-messages" class="chat-messages">
+                <div class="welcome-message">
+                    <div class="bot-message">
+                        <div class="message-avatar">🤖</div>
+                        <div class="message-content">
+                            <p id="welcome-text">Hi! I'll help you register step by step.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="quick-actions">
+                <button class="quick-action" data-action="register">
+                    📝 How to Register
+                </button>
+                <button class="quick-action" data-action="login">
+                    🔑 How to Login
+                </button>
+            </div>
+
+            <!-- Video Guide -->
+            <div id="video-guide" class="video-guide" style="display: none;">
+                <div class="video-container">
+                    <h4 id="video-title">Registration Guide</h4>
+                    <div class="video-player">
+                        <div class="video-placeholder">
+                            <div class="video-steps">
+                                <div class="step">Step 1: Click "Register here" at the bottom</div>
+                                <div class="step">Step 2: Enter your username</div>
+                                <div class="step">Step 3: Enter your email</div>
+                                <div class="step">Step 4: Create a password</div>
+                                <div class="step">Step 5: Click "Create Account"</div>
+                                <div class="step success">✓ Registration successful!</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video-controls">
+                        <button id="play-video" class="play-btn">▶️ Play</button>
+                        <button id="close-video" class="close-video-btn">Close</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chat Input -->
+            <div class="chat-input-container">
+                <input type="text" id="chat-input" placeholder="Ask for help..." />
+                <button id="send-message" class="send-btn">
+                    <span>➤</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success/Error Messages -->
+    <div id="message-container" class="message-container" style="display: none;">
+        <div id="message-content" class="message-content"></div>
+    </div>
+
+    <script src="login.js"></script>
+    <script src="simple-chatbot.js"></script>
+    
+    <!-- Google Sign-In Initialization -->
+    <script>
+      window.onload = function() {
+        setTimeout(function() {
+          if (typeof google !== 'undefined' && google.accounts) {
+            try {
+              // Initialize Google Sign-In for login form
+              google.accounts.id.initialize({
+                client_id: "313492899208-050le5l9gs8etovou5a6e5amjlgi9a7s.apps.googleusercontent.com",
+                callback: handleCredentialResponse,
+                auto_select: false,
+                cancel_on_tap_outside: false
+              });
+
+              // Render Google Sign-In button for login form
+              google.accounts.id.renderButton(
+                document.getElementById("google-signin-button"),
+                { 
+                  theme: "outline", 
+                  size: "large",
+                  text: "signin_with",
+                  shape: "rectangular",
+                  logo_alignment: "left"
+                }
+              );
+
+              // Render Google Sign-In button for register form
+              google.accounts.id.renderButton(
+                document.getElementById("google-signin-button-register"),
+                { 
+                  theme: "outline", 
+                  size: "large",
+                  text: "signup_with",
+                  shape: "rectangular",
+                  logo_alignment: "left"
+                }
+              );
+
+              console.log("Google Sign-In initialized successfully");
+            } catch (error) {
+              console.error("Google initialization error:", error);
+              if (typeof loginManager !== 'undefined') {
+                loginManager.showMessage('Google Sign-In initialization failed', 'error');
+              }
+            }
+          } else {
+            console.error("Google script not loaded");
+            if (typeof loginManager !== 'undefined') {
+              loginManager.showMessage('Google Sign-In service unavailable', 'error');
+            }
+          }
+        }, 1000);
+      };
+
+      function handleCredentialResponse(response) {
+        console.log("Google credential response:", response);
+        
+        try {
+          if (response && response.credential) {
+            // Decode JWT token to get user information
+            const payload = JSON.parse(atob(response.credential.split('.')[1]));
+            
+            const userData = {
+              id: payload.sub,
+              email: payload.email,
+              name: payload.name,
+              picture: payload.picture,
+              loginMethod: 'google',
+              username: payload.email
+            };
+            
+            console.log("User data extracted:", userData);
+            
+            // Store user data
+            sessionStorage.setItem('currentUser', JSON.stringify(userData));
+            
+            // Show success message
+            if (typeof loginManager !== 'undefined') {
+              loginManager.showMessage('Google sign-in successful! Redirecting...', 'success');
+            }
+            
+            // Redirect to main page
+            setTimeout(() => {
+              window.location.href = 'index.html';
+            }, 1500);
+          } else {
+            // Handle error
+            console.error("Google sign-in error:", response);
+            if (typeof loginManager !== 'undefined') {
+              loginManager.showMessage('Google sign-in failed. Please try again.', 'error');
+            }
+          }
+        } catch (error) {
+          console.error("Error handling Google response:", error);
+          if (typeof loginManager !== 'undefined') {
+            loginManager.showMessage('An error occurred during Google sign-in', 'error');
+          }
+        }
+      }
+
+      // Handle Google Sign-In errors
+      window.onGoogleSignInError = function(error) {
+        console.error("Google Sign-In error:", error);
+        if (typeof loginManager !== 'undefined') {
+          loginManager.showMessage('Google sign-in failed: ' + error, 'error');
+        }
+      };
+    </script>
+    
+    <!-- Clear form fields on page load -->
+    <script>
+        window.addEventListener('load', function() {
+            // Clear all input fields
+            const inputs = document.querySelectorAll('input[type="text"], input[type="email"], input[type="password"]');
+            inputs.forEach(input => {
+                input.value = '';
+            });
+            
+            // Clear any browser auto-fill
+            setTimeout(() => {
+                inputs.forEach(input => {
+                    input.value = '';
+                });
+            }, 100);
+        });
+    </script>
+</body>
+
+</html>

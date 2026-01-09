@@ -1,0 +1,140 @@
+ICAR AGRICULTURAL GUIDELINES - INDIAN CROP WATER MANAGEMENT
+
+Source: Indian Council of Agricultural Research
+
+========================
+WATER MANAGEMENT FOR INDIAN CONDITIONS
+========================
+
+RICE CULTIVATION - INDIAN VARIETIES
+
+Water Requirements (Indian Conditions):
+- Indian rice varieties adapted to monsoon patterns
+- Water need varies with variety: Short duration (80-90 days), Medium (110-120 days), Long (130-140 days)
+
+1. Initial Stage (Transplanting + 20 days)
+   - Maintain 5cm standing water
+   - 75-85 liters/hectare/day
+   - Critical for root establishment
+
+2. Tillering to Booting
+   - Increase to 7-10cm water depth
+   - 95-105 liters/hectare/day
+   - Alternate wetting and drying can save water
+
+3. Flowering to Maturity
+   - Keep 5cm water continuously
+   - 115-125 liters/hectare/day
+   - Most sensitive to water stress
+
+Water Saving Techniques (ICAR Recommended):
+- System of Rice Intensification (SRI): Save 30-40% water
+- Alternate Wetting and Drying (AWD): Save 15-25% water
+- Direct Seeded Rice (DSR): Save 20-35% water
+
+========================
+WHEAT - NORTH INDIA CONDITIONS
+========================
+
+Rabi Season (Winter) Crop:
+- Sowing: October-November
+- Harvest: March-April
+- Less rainfall dependency
+
+Irrigation Schedule:
+
+1. Crown Root Initiation (20-25 DAS)
+   - First critical irrigation
+   - 40-50 liters/hectare/day
+   - Soil moisture: 50%
+
+2. Tillering Stage
+   - Second irrigation
+   - 55-70 liters/hectare/day
+   - Soil moisture: 55%
+
+3. Jointing Stage
+   - Third irrigation
+   - 60-75 liters/hectare/day
+   - Important for spike development
+
+4. Flowering and Grain Filling
+   - Fourth and fifth irrigation
+   - 75-90 liters/hectare/day
+   - Soil moisture: 60%
+   - Critical for grain weight
+
+ICAR Recommendation: 4-6 irrigations for wheat in North India
+
+========================
+MAIZE - KHARIF AND RABI SEASONS
+========================
+
+Kharif (Monsoon) Maize:
+- Higher humidity, some rainfall
+- Reduced irrigation need
+- 60-80 liters/hectare/day during critical stages
+
+Rabi (Winter) Maize:
+- Full irrigation required
+- 70-95 liters/hectare/day
+
+Critical Stages for Irrigation:
+1. Knee-high stage (VT)
+2. Tasseling and Silking (R1) - MOST CRITICAL
+3. Grain filling (R3-R5)
+
+Water Stress Impact:
+- At flowering: 40-50% yield loss possible
+- At grain filling: 20-30% yield loss
+
+========================
+SOIL MOISTURE MONITORING
+========================
+
+Field Capacity vs Permanent Wilting Point:
+- Light soils (Sandy): Irrigate at 40-50% depletion
+- Medium soils (Loamy): Irrigate at 50-60% depletion  
+- Heavy soils (Clayey): Irrigate at 60-70% depletion
+
+Tensiometer Readings:
+- 0-10 cb: Saturated - Risk of waterlogging
+- 10-25 cb: Field capacity - Optimal for most crops
+- 25-50 cb: Available water - Irrigate soon
+- 50-80 cb: Stress zone - Irrigate immediately
+- >80 cb: Permanent wilting point - Severe stress
+
+========================
+MONSOON AND RAINFALL MANAGEMENT
+========================
+
+Pre-Monsoon:
+- Light irrigation to prepare soil
+- Conserve moisture with mulching
+
+During Monsoon:
+- Skip irrigation if rainfall > 15mm
+- Ensure proper drainage
+- Monitor for waterlogging
+
+Post-Monsoon:
+- Resume scheduled irrigation
+- Adjust based on residual soil moisture
+
+========================
+WATER QUALITY STANDARDS (ICAR)
+========================
+
+Irrigation Water Quality:
+- pH: 6.5-8.5 (optimal)
+- EC: < 2 dS/m (generally safe)
+- SAR: < 10 (low sodium hazard)
+
+Poor quality water impact:
+- Reduced water uptake
+- Soil salinity issues
+- Crop toxicity
+
+================================================================================
+DISCLAIMER: These are general guidelines. Farmers should consult local Krishi Vigyan Kendra (KVK) for specific recommendations based on local soil, climate, and water availability.
+================================================================================
